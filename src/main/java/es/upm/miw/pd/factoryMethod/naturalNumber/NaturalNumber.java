@@ -2,17 +2,31 @@ package es.upm.miw.pd.factoryMethod.naturalNumber;
 
 public class NaturalNumber {
 	
-	private int number;
+	private int value;
 	
-	public NaturalNumber(int number) {
-		this.setNumber(number);
+	public NaturalNumber(int value) {
+		this.setValue(value);
 	}
 
-	public int getNumber() {
-		return number;
-	}
+    public int getValue() {
+        return value;
+    }
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
+    public void setValue(int value) {
+        assert value >= 0;
+        this.value = value;
+    }
+
+    public void add(int value) {
+        this.setValue(this.value + value);
+    }
+
+    public String getTextValue(String[] textValue) {
+        if (this.value < textValue.length) {
+            return textValue[this.value];
+        } else {
+            return "???";
+        }
+    }
+
 }
